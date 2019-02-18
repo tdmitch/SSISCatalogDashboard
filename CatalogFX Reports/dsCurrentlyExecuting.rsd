@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <DataSet Name="">
+    <Query>
+      <DataSourceReference>ETLDB</DataSourceReference>
+      <CommandText>SELECT *, 1 [count]
+FROM [fx].[executions]
+WHERE status = 'Running'</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="execution_id">
+        <DataField>execution_id</DataField>
+        <rd:TypeName>System.Int64</rd:TypeName>
+      </Field>
+      <Field Name="folder_name">
+        <DataField>folder_name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="project_name">
+        <DataField>project_name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="package_name">
+        <DataField>package_name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="reference_id">
+        <DataField>reference_id</DataField>
+        <rd:TypeName>System.Int64</rd:TypeName>
+      </Field>
+      <Field Name="reference_type">
+        <DataField>reference_type</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="environment_folder_name">
+        <DataField>environment_folder_name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="environment_name">
+        <DataField>environment_name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="project_lsn">
+        <DataField>project_lsn</DataField>
+        <rd:TypeName>System.Int64</rd:TypeName>
+      </Field>
+      <Field Name="executed_as_sid">
+        <DataField>executed_as_sid</DataField>
+        <rd:TypeName>System.Byte[]</rd:TypeName>
+      </Field>
+      <Field Name="executed_as_name">
+        <DataField>executed_as_name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="use32bitruntime">
+        <DataField>use32bitruntime</DataField>
+        <rd:TypeName>System.Boolean</rd:TypeName>
+      </Field>
+      <Field Name="operation_type">
+        <DataField>operation_type</DataField>
+        <rd:TypeName>System.Int16</rd:TypeName>
+      </Field>
+      <Field Name="created_time">
+        <DataField>created_time</DataField>
+        <rd:TypeName>System.DateTimeOffset</rd:TypeName>
+      </Field>
+      <Field Name="object_type">
+        <DataField>object_type</DataField>
+        <rd:TypeName>System.Int16</rd:TypeName>
+      </Field>
+      <Field Name="object_id">
+        <DataField>object_id</DataField>
+        <rd:TypeName>System.Int64</rd:TypeName>
+      </Field>
+      <Field Name="status">
+        <DataField>status</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="start_time">
+        <DataField>start_time</DataField>
+        <rd:TypeName>System.DateTimeOffset</rd:TypeName>
+      </Field>
+      <Field Name="end_time">
+        <DataField>end_time</DataField>
+        <rd:TypeName>System.DateTimeOffset</rd:TypeName>
+      </Field>
+      <Field Name="caller_name">
+        <DataField>caller_name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="process_id">
+        <DataField>process_id</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="stopped_by_name">
+        <DataField>stopped_by_name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="server_name">
+        <DataField>server_name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="machine_name">
+        <DataField>machine_name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="total_physical_memory_kb">
+        <DataField>total_physical_memory_kb</DataField>
+        <rd:TypeName>System.Int64</rd:TypeName>
+      </Field>
+      <Field Name="available_physical_memory_kb">
+        <DataField>available_physical_memory_kb</DataField>
+        <rd:TypeName>System.Int64</rd:TypeName>
+      </Field>
+      <Field Name="total_page_file_kb">
+        <DataField>total_page_file_kb</DataField>
+        <rd:TypeName>System.Int64</rd:TypeName>
+      </Field>
+      <Field Name="available_page_file_kb">
+        <DataField>available_page_file_kb</DataField>
+        <rd:TypeName>System.Int64</rd:TypeName>
+      </Field>
+      <Field Name="cpu_count">
+        <DataField>cpu_count</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="duration">
+        <DataField>duration</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="count">
+        <DataField>count</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

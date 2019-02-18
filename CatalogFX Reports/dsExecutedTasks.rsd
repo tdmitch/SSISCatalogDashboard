@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="">
+    <Query>
+      <DataSourceReference>SSISDB</DataSourceReference>
+      <DataSetParameters>
+        <DataSetParameter Name="@execution_id">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>Int32</rd:DbType>
+        </DataSetParameter>
+      </DataSetParameters>
+      <CommandText>SELECT *
+, CASE execution_result WHEN 1 THEN 'Failed' WHEN 0 THEN 'Succeeded' END AS [execution_result_name]
+FROM [catalog].[executable_statistics]
+WHERE execution_id = @execution_id</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="statistics_id">
+        <DataField>statistics_id</DataField>
+        <rd:TypeName>System.Int64</rd:TypeName>
+      </Field>
+      <Field Name="execution_id">
+        <DataField>execution_id</DataField>
+        <rd:TypeName>System.Int64</rd:TypeName>
+      </Field>
+      <Field Name="executable_id">
+        <DataField>executable_id</DataField>
+        <rd:TypeName>System.Int64</rd:TypeName>
+      </Field>
+      <Field Name="execution_path">
+        <DataField>execution_path</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="start_time">
+        <DataField>start_time</DataField>
+        <rd:TypeName>System.DateTimeOffset</rd:TypeName>
+      </Field>
+      <Field Name="end_time">
+        <DataField>end_time</DataField>
+        <rd:TypeName>System.DateTimeOffset</rd:TypeName>
+      </Field>
+      <Field Name="execution_duration">
+        <DataField>execution_duration</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="execution_result">
+        <DataField>execution_result</DataField>
+        <rd:TypeName>System.Int16</rd:TypeName>
+      </Field>
+      <Field Name="execution_value">
+        <DataField>execution_value</DataField>
+        <rd:TypeName>System.Object</rd:TypeName>
+      </Field>
+      <Field Name="execution_result_name">
+        <DataField>execution_result_name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <DataSet Name="">
+    <Query>
+      <DataSourceReference>ETLDB</DataSourceReference>
+      <CommandText>SELECT *
+FROM [catalog].[executions]
+WHERE [status] IN (@Status)
+AND CAST(end_time AS DATETIME) &gt; DATEADD(HOUR, 0 - CAST(@RecentEventNumberOfHours AS INT), GETDATE())
+AND folder_name IN (@FolderName)
+AND project_name IN (@ProjectName)
+AND package_name IN (@PackageName)</CommandText>
+    </Query>
+  </DataSet>
+</SharedDataSet>
