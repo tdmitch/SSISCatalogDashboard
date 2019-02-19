@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>SSISDB</DataSourceReference>
+      <CommandText>SELECT -1 [message_type], 'Unknown' [message_type_name], 0 [is_error]
+UNION ALL SELECT 10, 'Pre-validate', 0 [is_error]
+UNION ALL SELECT 20, 'Post-validate', 0 [is_error]
+UNION ALL SELECT 30, 'Pre-execute', 0 [is_error]
+UNION ALL SELECT 40, 'Post-execute', 0 [is_error]
+UNION ALL SELECT 60, 'Progress', 0 [is_error]
+UNION ALL SELECT 50, 'StatusChange', 0 [is_error]
+UNION ALL SELECT 70, 'Information', 0 [is_error]
+UNION ALL SELECT 90, 'Diagnostic', 0 [is_error]
+UNION ALL SELECT 100, 'QueryCancel', 0 [is_error]
+UNION ALL SELECT 110, 'Warning', 0 [is_error]
+UNION ALL SELECT 120, 'Error', 1 [is_error]
+UNION ALL SELECT 130, 'TaskFailed', 1 [is_error]
+UNION ALL SELECT 140, 'DiagnosticEx', 0 [is_error]
+UNION ALL SELECT 200, 'Custom', 0 [is_error]
+ORDER BY 1</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="message_type">
+        <DataField>message_type</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="message_type_name">
+        <DataField>message_type_name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="is_error">
+        <DataField>is_error</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

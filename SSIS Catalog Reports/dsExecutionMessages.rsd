@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>SSISDB</DataSourceReference>
+      <DataSetParameters>
+        <DataSetParameter Name="@pExecutionID">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>Int32</rd:DbType>
+        </DataSetParameter>
+        <DataSetParameter Name="@pOnlyErrors">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>Boolean</rd:DbType>
+        </DataSetParameter>
+      </DataSetParameters>
+      <CommandText>SELECT *
+FROM catalog.event_messages em
+WHERE em.operation_id = @pExecutionID
+AND em.message_type = CASE WHEN @pOnlyErrors = 1 THEN 120 ELSE em.message_type END </CommandText>
+    </Query>
+    <Fields>
+      <Field Name="event_message_id">
+        <DataField>event_message_id</DataField>
+        <rd:TypeName>System.Int64</rd:TypeName>
+      </Field>
+      <Field Name="operation_id">
+        <DataField>operation_id</DataField>
+        <rd:TypeName>System.Int64</rd:TypeName>
+      </Field>
+      <Field Name="message_time">
+        <DataField>message_time</DataField>
+        <rd:TypeName>System.DateTimeOffset</rd:TypeName>
+      </Field>
+      <Field Name="message_type">
+        <DataField>message_type</DataField>
+        <rd:TypeName>System.Int16</rd:TypeName>
+      </Field>
+      <Field Name="message_source_type">
+        <DataField>message_source_type</DataField>
+        <rd:TypeName>System.Int16</rd:TypeName>
+      </Field>
+      <Field Name="message">
+        <DataField>message</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="extended_info_id">
+        <DataField>extended_info_id</DataField>
+        <rd:TypeName>System.Int64</rd:TypeName>
+      </Field>
+      <Field Name="package_name">
+        <DataField>package_name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="event_name">
+        <DataField>event_name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="message_source_name">
+        <DataField>message_source_name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="message_source_id">
+        <DataField>message_source_id</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="subcomponent_name">
+        <DataField>subcomponent_name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="package_path">
+        <DataField>package_path</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="execution_path">
+        <DataField>execution_path</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="threadID">
+        <DataField>threadID</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="message_code">
+        <DataField>message_code</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="event_message_guid">
+        <DataField>event_message_guid</DataField>
+        <rd:TypeName>System.Guid</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

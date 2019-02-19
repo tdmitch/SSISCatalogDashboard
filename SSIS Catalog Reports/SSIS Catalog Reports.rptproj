@@ -51,7 +51,9 @@
     <DataSet Include="dsCurrentlyQueued.rsd" />
     <DataSet Include="dsExecutedTasks.rsd" />
     <DataSet Include="dsExecutionList.rsd" />
+    <DataSet Include="dsExecutionMessages.rsd" />
     <DataSet Include="dsFolders.rsd" />
+    <DataSet Include="dsMessageType.rsd" />
     <DataSet Include="dsPackageRecentRuntimes.rsd" />
     <DataSet Include="dsPackages.rsd" />
     <DataSet Include="dsProjects.rsd" />
@@ -67,6 +69,7 @@
     <Report Include="Dashboard.rdl" />
     <Report Include="ExecutionDetail.rdl" />
     <Report Include="ExecutionList.rdl" />
+    <Report Include="ExecutionMessages.rdl" />
     <Report Include="PackageDetail.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
