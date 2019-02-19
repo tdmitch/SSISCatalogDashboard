@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "SSIS Catalog Reports", "SSIS Catalog Reports\SSIS Catalog Reports.rptproj", "{D87DD7DC-DA69-46AC-87A1-EC5ECA9568C3}"
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "SSIS Catalog Dashboard", "SSIS Catalog Dashboard\SSIS Catalog Dashboard.rptproj", "{D87DD7DC-DA69-46AC-87A1-EC5ECA9568C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
