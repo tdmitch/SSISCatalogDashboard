@@ -1,20 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "CatalogFX Reports", "CatalogFX Reports\CatalogFX Reports.rptproj", "{D87DD7DC-DA69-46AC-87A1-EC5ECA9568C3}"
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "SSIS Catalog Reports", "SSIS Catalog Reports\SSIS Catalog Reports.rptproj", "{D87DD7DC-DA69-46AC-87A1-EC5ECA9568C3}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 2
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://tyleris.visualstudio.com/defaultcollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = CatalogFX\u0020Reports\\CatalogFX\u0020Reports.rptproj
-		SccProjectName1 = CatalogFX\u0020Reports
-		SccLocalPath1 = CatalogFX\u0020Reports
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Default = Debug|Default
 		DebugLocal|Default = DebugLocal|Default
@@ -32,5 +23,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D7466DC3-F5F0-4049-B024-3FE69D236796}
 	EndGlobalSection
 EndGlobal

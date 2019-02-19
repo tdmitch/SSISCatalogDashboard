@@ -1,11 +1,94 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <DataSet Name="">
     <Query>
-      <DataSourceReference>ETLDB</DataSourceReference>
-      <CommandText>SELECT *, 1 [count]
-FROM [fx].[executions]
-WHERE status = 'Running'</CommandText>
+      <DataSourceReference>SSISDB</DataSourceReference>
+      <DataSetParameters>
+        <DataSetParameter Name="@Status">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>Object</rd:DbType>
+        </DataSetParameter>
+        <DataSetParameter Name="@RecentEventNumberOfHours">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>Object</rd:DbType>
+        </DataSetParameter>
+        <DataSetParameter Name="@FolderName">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>Object</rd:DbType>
+        </DataSetParameter>
+        <DataSetParameter Name="@ProjectName">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>Object</rd:DbType>
+        </DataSetParameter>
+        <DataSetParameter Name="@PackageName">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>Object</rd:DbType>
+        </DataSetParameter>
+        <DataSetParameter Name="@qMaxNumberOfExecutions">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>Object</rd:DbType>
+        </DataSetParameter>
+      </DataSetParameters>
+      <CommandText>SELECT execution_id
+	 , folder_name
+	 , project_name
+	 , package_name
+	 , reference_id
+	 , reference_type
+	 , environment_folder_name
+	 , environment_name
+	 , project_lsn
+	 , executed_as_sid
+	 , executed_as_name
+	 , use32bitruntime
+	 , operation_type
+	 , created_time
+	 , object_type
+	 , object_id
+	 , status
+	 , start_time
+	 , end_time
+	 , caller_sid
+	 , caller_name
+	 , process_id
+	 , stopped_by_sid
+	 , stopped_by_name
+	 , dump_id
+	 , server_name
+	 , machine_name
+	 , worker_agent_id
+	 , total_physical_memory_kb
+	 , available_physical_memory_kb
+	 , total_page_file_kb
+	 , available_page_file_kb
+	 , cpu_count
+	 , executed_count
+	 , duration
+FROM (
+	SELECT *
+		, DATEDIFF(SECOND, start_time, COALESCE(end_time, GETDATE())) [duration]
+		, ROW_NUMBER() OVER (ORDER BY start_time DESC) [RowNum]
+	FROM [catalog].[executions]
+	WHERE [status] IN ( @Status )
+		AND CAST(end_time AS DATETIME) &gt; DATEADD(HOUR, 0 - CAST(@RecentEventNumberOfHours AS INT), GETDATE())
+		AND folder_name IN ( @FolderName )
+		AND project_name IN ( @ProjectName )
+		AND package_name IN ( @PackageName )
+) t 
+
+WHERE RowNum &lt;= @qMaxNumberOfExecutions</CommandText>
     </Query>
     <Fields>
       <Field Name="execution_id">
@@ -74,7 +157,7 @@ WHERE status = 'Running'</CommandText>
       </Field>
       <Field Name="status">
         <DataField>status</DataField>
-        <rd:TypeName>System.String</rd:TypeName>
+        <rd:TypeName>System.Int32</rd:TypeName>
       </Field>
       <Field Name="start_time">
         <DataField>start_time</DataField>
@@ -84,6 +167,10 @@ WHERE status = 'Running'</CommandText>
         <DataField>end_time</DataField>
         <rd:TypeName>System.DateTimeOffset</rd:TypeName>
       </Field>
+      <Field Name="caller_sid">
+        <DataField>caller_sid</DataField>
+        <rd:TypeName>System.Byte[]</rd:TypeName>
+      </Field>
       <Field Name="caller_name">
         <DataField>caller_name</DataField>
         <rd:TypeName>System.String</rd:TypeName>
@@ -92,9 +179,17 @@ WHERE status = 'Running'</CommandText>
         <DataField>process_id</DataField>
         <rd:TypeName>System.Int32</rd:TypeName>
       </Field>
+      <Field Name="stopped_by_sid">
+        <DataField>stopped_by_sid</DataField>
+        <rd:TypeName>System.Byte[]</rd:TypeName>
+      </Field>
       <Field Name="stopped_by_name">
         <DataField>stopped_by_name</DataField>
         <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="dump_id">
+        <DataField>dump_id</DataField>
+        <rd:TypeName>System.Guid</rd:TypeName>
       </Field>
       <Field Name="server_name">
         <DataField>server_name</DataField>
@@ -103,6 +198,10 @@ WHERE status = 'Running'</CommandText>
       <Field Name="machine_name">
         <DataField>machine_name</DataField>
         <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="worker_agent_id">
+        <DataField>worker_agent_id</DataField>
+        <rd:TypeName>System.Guid</rd:TypeName>
       </Field>
       <Field Name="total_physical_memory_kb">
         <DataField>total_physical_memory_kb</DataField>
@@ -124,12 +223,12 @@ WHERE status = 'Running'</CommandText>
         <DataField>cpu_count</DataField>
         <rd:TypeName>System.Int32</rd:TypeName>
       </Field>
+      <Field Name="executed_count">
+        <DataField>executed_count</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
       <Field Name="duration">
         <DataField>duration</DataField>
-        <rd:TypeName>System.Decimal</rd:TypeName>
-      </Field>
-      <Field Name="count">
-        <DataField>count</DataField>
         <rd:TypeName>System.Int32</rd:TypeName>
       </Field>
     </Fields>

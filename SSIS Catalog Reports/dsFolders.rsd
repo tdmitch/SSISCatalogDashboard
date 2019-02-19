@@ -3,14 +3,10 @@
   <DataSet Name="DataSet1">
     <Query>
       <DataSourceReference>SSISDB</DataSourceReference>
-      <CommandText>SELECT folder_id, name [folder_name]
+      <CommandText>SELECT name [folder_name]
 FROM catalog.folders</CommandText>
     </Query>
     <Fields>
-      <Field Name="folder_id">
-        <DataField>folder_id</DataField>
-        <rd:TypeName>System.Int64</rd:TypeName>
-      </Field>
       <Field Name="folder_name">
         <DataField>folder_name</DataField>
         <rd:TypeName>System.String</rd:TypeName>

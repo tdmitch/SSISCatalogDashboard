@@ -4,33 +4,51 @@
     <Query>
       <DataSourceReference>SSISDB</DataSourceReference>
       <DataSetParameters>
-        <DataSetParameter Name="@pExecutionID">
+        <DataSetParameter Name="@pFolder">
           <ReadOnly>false</ReadOnly>
           <Nullable>false</Nullable>
           <OmitFromQuery>false</OmitFromQuery>
           <rd:DbType>Object</rd:DbType>
         </DataSetParameter>
-        <DataSetParameter Name="@pHoursHistory">
+        <DataSetParameter Name="@pProject">
           <ReadOnly>false</ReadOnly>
           <Nullable>false</Nullable>
           <OmitFromQuery>false</OmitFromQuery>
           <rd:DbType>Object</rd:DbType>
+        </DataSetParameter>
+        <DataSetParameter Name="@pPackage">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>Object</rd:DbType>
+        </DataSetParameter>
+        <DataSetParameter Name="@pNumRecentExecutions">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>Int32</rd:DbType>
         </DataSetParameter>
       </DataSetParameters>
-      <CommandText>SELECT recentX.end_time, recentX.status
+      <CommandText>SELECT start_time, end_time, status, duration
+FROM (
+SELECT ROW_NUMBER() OVER (ORDER BY recentX.start_time DESC) RowNum
+	, recentX.start_time
+	,  recentX.end_time
+	, recentX.status
 	, DATEDIFF(SECOND, recentX.start_time, COALESCE(recentX.end_time, GETDATE())) [duration]
 FROM catalog.executions recentX
-INNER JOIN (
-	SELECT folder_name, package_name, project_name 		
-	FROM catalog.executions 
-	WHERE execution_id = @pExecutionID
-) lastX
-	ON recentX.folder_name = lastx.folder_name
-	AND recentx.project_name = lastx.project_name
-	AND recentx.package_name = lastx.package_name
-WHERE CAST(end_time AS DATETIME) &gt; DATEADD(HOUR, 0 - CAST(@pHoursHistory AS INT), GETDATE())</CommandText>
+WHERE recentX.folder_name = @pFolder
+	AND recentx.project_name = @pProject
+	AND recentx.package_name = @pPackage
+	AND CAST(end_time AS DATETIME) &gt; DATEADD(DAY, -90, GETDATE())
+) t
+WHERE RowNum &lt;= @pNumRecentExecutions</CommandText>
     </Query>
     <Fields>
+      <Field Name="start_time">
+        <DataField>start_time</DataField>
+        <rd:TypeName>System.DateTimeOffset</rd:TypeName>
+      </Field>
       <Field Name="end_time">
         <DataField>end_time</DataField>
         <rd:TypeName>System.DateTimeOffset</rd:TypeName>

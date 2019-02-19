@@ -52,23 +52,22 @@
     <DataSet Include="dsExecutedTasks.rsd" />
     <DataSet Include="dsExecutionList.rsd" />
     <DataSet Include="dsFolders.rsd" />
+    <DataSet Include="dsPackageRecentRuntimes.rsd" />
     <DataSet Include="dsPackages.rsd" />
     <DataSet Include="dsProjects.rsd" />
     <DataSet Include="dsRecentFailedExecutions.rsd" />
     <DataSet Include="dsRecentSuccessfulExecutions.rsd" />
-    <DataSet Include="dsReportingPeriods.rsd" />
     <DataSet Include="dsSingleExecution.rsd" />
-    <DataSet Include="dsSingleExecutionRecentRuntimes.rsd" />
     <DataSet Include="dsStatus.rsd" />
   </ItemGroup>
   <ItemGroup>
-    <DataSource Include="ETLDB.rds" />
     <DataSource Include="SSISDB.rds" />
   </ItemGroup>
   <ItemGroup>
     <Report Include="Dashboard.rdl" />
     <Report Include="ExecutionDetail.rdl" />
     <Report Include="ExecutionList.rdl" />
+    <Report Include="PackageDetail.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
 </Project>

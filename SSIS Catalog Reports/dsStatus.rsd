@@ -2,9 +2,16 @@
 <SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <DataSet Name="DataSet1">
     <Query>
-      <DataSourceReference>ETLDB</DataSourceReference>
-      <CommandText>SELECT status_id, status_name, status_group 
-FROM fx.Execution_Status</CommandText>
+      <DataSourceReference>SSISDB</DataSourceReference>
+      <CommandText>SELECT 1 [status_id], 'Created' [status_name], 'Active' [status_group]
+UNION ALL SELECT 2, 'Running', 'Active'
+UNION ALL SELECT 3, 'Canceled', 'Failed'
+UNION ALL SELECT 4, 'Failed', 'Failed'
+UNION ALL SELECT 5, 'Pending', 'Active'
+UNION ALL SELECT 6, 'Ended unexpectedly', 'Failed'
+UNION ALL SELECT 7, 'Succeeded', 'Succeeded'
+UNION ALL SELECT 8, 'Stopping', 'Active'
+UNION ALL SELECT 9, 'Completed', 'Failed'</CommandText>
     </Query>
     <Fields>
       <Field Name="status_id">

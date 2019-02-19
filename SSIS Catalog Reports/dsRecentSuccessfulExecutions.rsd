@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <DataSet Name="">
     <Query>
-      <DataSourceReference>ETLDB</DataSourceReference>
+      <DataSourceReference>SSISDB</DataSourceReference>
       <DataSetParameters>
         <DataSetParameter Name="@RecentEventNumberOfHours">
           <DefaultValue>24</DefaultValue>
@@ -12,10 +12,39 @@
           <rd:DbType>Object</rd:DbType>
         </DataSetParameter>
       </DataSetParameters>
-      <CommandText>SELECT *
-FROM [fx].[executions]
-WHERE status = 'Succeeded'
-AND CAST(end_time AS DATETIME) &gt; DATEADD(HOUR, 0 - CAST(@RecentEventNumberOfHours AS INT), GETDATE())</CommandText>
+      <CommandText>SELECT	execution_id
+	, folder_name
+	, project_name
+	, package_name
+	, reference_id
+	, reference_type
+	, environment_folder_name
+	, environment_name
+	, project_lsn
+	, executed_as_sid
+	, executed_as_name
+	, use32bitruntime
+	, operation_type
+	, created_time
+	, object_type
+	, object_id
+	, status
+	, start_time
+	, end_time
+	, caller_name
+	, process_id
+	, stopped_by_name
+	, server_name
+	, machine_name
+	, total_physical_memory_kb
+	, available_physical_memory_kb
+	, total_page_file_kb
+	, available_page_file_kb
+	, cpu_count
+	, DATEDIFF(SECOND, start_time, end_time) duration
+FROM catalog.executions
+WHERE status = 7
+	AND CAST(end_time AS DATETIME) &gt; DATEADD(HOUR, 0 - CAST(@RecentEventNumberOfHours AS INT), GETDATE())</CommandText>
     </Query>
     <Fields>
       <Field Name="execution_id">
@@ -84,7 +113,7 @@ AND CAST(end_time AS DATETIME) &gt; DATEADD(HOUR, 0 - CAST(@RecentEventNumberOfH
       </Field>
       <Field Name="status">
         <DataField>status</DataField>
-        <rd:TypeName>System.String</rd:TypeName>
+        <rd:TypeName>System.Int32</rd:TypeName>
       </Field>
       <Field Name="start_time">
         <DataField>start_time</DataField>
@@ -136,7 +165,7 @@ AND CAST(end_time AS DATETIME) &gt; DATEADD(HOUR, 0 - CAST(@RecentEventNumberOfH
       </Field>
       <Field Name="duration">
         <DataField>duration</DataField>
-        <rd:TypeName>System.Decimal</rd:TypeName>
+        <rd:TypeName>System.Int32</rd:TypeName>
       </Field>
     </Fields>
   </DataSet>

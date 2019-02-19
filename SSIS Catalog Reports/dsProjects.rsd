@@ -4,26 +4,20 @@
     <Query>
       <DataSourceReference>SSISDB</DataSourceReference>
       <DataSetParameters>
-        <DataSetParameter Name="@qFolder_Id">
+        <DataSetParameter Name="@qFolder">
           <ReadOnly>false</ReadOnly>
           <Nullable>false</Nullable>
           <OmitFromQuery>false</OmitFromQuery>
           <rd:DbType>Object</rd:DbType>
         </DataSetParameter>
       </DataSetParameters>
-      <CommandText>SELECT project_id, folder_id, name [project_name]
-FROM catalog.projects
-WHERE folder_id IN (@qFolder_Id)</CommandText>
+      <CommandText>SELECT p.name [project_name]
+FROM catalog.projects p
+INNER JOIN catalog.folders f
+	ON f.folder_id = p.folder_id
+WHERE f.name IN (@qFolder)</CommandText>
     </Query>
     <Fields>
-      <Field Name="project_id">
-        <DataField>project_id</DataField>
-        <rd:TypeName>System.Int64</rd:TypeName>
-      </Field>
-      <Field Name="folder_id">
-        <DataField>folder_id</DataField>
-        <rd:TypeName>System.Int64</rd:TypeName>
-      </Field>
       <Field Name="project_name">
         <DataField>project_name</DataField>
         <rd:TypeName>System.String</rd:TypeName>

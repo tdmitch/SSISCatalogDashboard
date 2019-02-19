@@ -4,26 +4,29 @@
     <Query>
       <DataSourceReference>SSISDB</DataSourceReference>
       <DataSetParameters>
-        <DataSetParameter Name="@qProject_id">
+        <DataSetParameter Name="@qFolder">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>Object</rd:DbType>
+        </DataSetParameter>
+        <DataSetParameter Name="@qProject">
           <ReadOnly>false</ReadOnly>
           <Nullable>false</Nullable>
           <OmitFromQuery>false</OmitFromQuery>
           <rd:DbType>Object</rd:DbType>
         </DataSetParameter>
       </DataSetParameters>
-      <CommandText>SELECT package_id, project_id, name [package_name]
-FROM catalog.packages
-WHERE project_id IN (@qProject_id)</CommandText>
+      <CommandText>SELECT pk.name [package_name]
+FROM catalog.packages pk
+INNER JOIN catalog.projects p
+	ON p.project_id = pk.project_id
+INNER JOIN catalog.folders f
+	ON f.folder_id = p.folder_id
+WHERE f.name IN (@qFolder)
+	AND p.name IN (@qProject)</CommandText>
     </Query>
     <Fields>
-      <Field Name="package_id">
-        <DataField>package_id</DataField>
-        <rd:TypeName>System.Int64</rd:TypeName>
-      </Field>
-      <Field Name="project_id">
-        <DataField>project_id</DataField>
-        <rd:TypeName>System.Int64</rd:TypeName>
-      </Field>
       <Field Name="package_name">
         <DataField>package_name</DataField>
         <rd:TypeName>System.String</rd:TypeName>
