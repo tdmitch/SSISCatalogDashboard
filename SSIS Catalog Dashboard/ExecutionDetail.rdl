@@ -901,10 +901,10 @@
                   <Width>8.5325in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.49021in</Width>
+                  <Width>1.65624in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.28062in</Width>
+                  <Width>1.60354in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.99084in</Width>
@@ -1284,9 +1284,9 @@
               </SortExpression>
             </SortExpressions>
             <Top>3.72792in</Top>
-            <Left>0.25917in</Left>
+            <Left>0.12167in</Left>
             <Height>0.5in</Height>
-            <Width>13.25188in</Width>
+            <Width>13.74083in</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
