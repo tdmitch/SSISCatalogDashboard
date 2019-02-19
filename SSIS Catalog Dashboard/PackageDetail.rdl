@@ -290,24 +290,24 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>1.13542in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>1.09375in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.65625in</Width>
+                  <Width>1.80416in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.40625in</Width>
+                  <Width>1.51042in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.875in</Width>
+                  <Width>1.10417in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.25in</Height>
+                  <Height>0.21875in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -320,6 +320,7 @@
                                 <TextRun>
                                   <Value>Execution ID</Value>
                                   <Style>
+                                    <FontFamily>Lucida Sans</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -336,6 +337,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>LightSteelBlue</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -355,6 +357,7 @@
                                 <TextRun>
                                   <Value>Status</Value>
                                   <Style>
+                                    <FontFamily>Lucida Sans</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -371,6 +374,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>LightSteelBlue</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -390,6 +394,7 @@
                                 <TextRun>
                                   <Value>Start</Value>
                                   <Style>
+                                    <FontFamily>Lucida Sans</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -406,6 +411,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>LightSteelBlue</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -425,6 +431,7 @@
                                 <TextRun>
                                   <Value>End</Value>
                                   <Style>
+                                    <FontFamily>Lucida Sans</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -441,6 +448,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>LightSteelBlue</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -460,6 +468,7 @@
                                 <TextRun>
                                   <Value>Duration (sec)</Value>
                                   <Style>
+                                    <FontFamily>Lucida Sans</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -476,6 +485,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>LightSteelBlue</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -693,9 +703,10 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>rdsExecutionList</DataSetName>
-            <Top>1.72792in</Top>
-            <Height>0.5in</Height>
-            <Width>5.9375in</Width>
+            <Top>2.10292in</Top>
+            <Left>0.125in</Left>
+            <Height>0.46875in</Height>
+            <Width>6.64792in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -720,8 +731,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>0.13459in</Top>
-            <Left>3.27021in</Left>
+            <Top>0.18167in</Top>
+            <Left>4.5125in</Left>
             <Height>0.64583in</Height>
             <Width>6.125in</Width>
             <ZIndex>1</ZIndex>
@@ -737,8 +748,8 @@
             <Source>Embedded</Source>
             <Value>logo</Value>
             <Sizing>FitProportional</Sizing>
-            <Top>0.00959in</Top>
-            <Left>2.22854in</Left>
+            <Top>0.05667in</Top>
+            <Left>3.22083in</Left>
             <Height>0.77083in</Height>
             <Width>0.8125in</Width>
             <ZIndex>2</ZIndex>
@@ -768,9 +779,9 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
-            <Top>0.9675in</Top>
+            <Top>1.03063in</Top>
             <Height>0.46875in</Height>
-            <Width>11.62375in</Width>
+            <Width>14in</Width>
             <ZIndex>3</ZIndex>
             <Style>
               <Border>
@@ -854,6 +865,7 @@
                 <ChartCategoryAxes>
                   <ChartAxis Name="Primary">
                     <Style>
+                      <FontFamily>Lucida Sans</FontFamily>
                       <FontSize>8pt</FontSize>
                       <Format>d</Format>
                     </Style>
@@ -935,6 +947,7 @@
                     <ChartAxisTitle>
                       <Caption>Seconds</Caption>
                       <Style>
+                        <FontFamily>Lucida Sans</FontFamily>
                         <FontSize>8pt</FontSize>
                       </Style>
                     </ChartAxisTitle>
@@ -1009,6 +1022,7 @@
               <ChartLegend Name="Default">
                 <Style>
                   <BackgroundGradientType>None</BackgroundGradientType>
+                  <FontFamily>Lucida Sans</FontFamily>
                   <FontSize>8pt</FontSize>
                 </Style>
                 <ChartLegendTitle>
@@ -1028,6 +1042,7 @@
                 <Caption>Execution History</Caption>
                 <Style>
                   <BackgroundGradientType>None</BackgroundGradientType>
+                  <FontFamily>Lucida Sans</FontFamily>
                   <FontWeight>Bold</FontWeight>
                   <TextAlign>General</TextAlign>
                   <VerticalAlign>Top</VerticalAlign>
@@ -1052,9 +1067,9 @@
             </ChartNoDataMessage>
             <DataSetName>rdsPackageRecentRuntimes</DataSetName>
             <Top>1.72792in</Top>
-            <Left>6.14in</Left>
+            <Left>7.14in</Left>
             <Height>3.03125in</Height>
-            <Width>5.3125in</Width>
+            <Width>6.45833in</Width>
             <ZIndex>4</ZIndex>
             <Style>
               <Border>
@@ -1065,11 +1080,45 @@
               <BackgroundGradientType>None</BackgroundGradientType>
             </Style>
           </Chart>
+          <Textbox Name="Textbox7">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>="Most Recent Executions"</Value>
+                    <Style>
+                      <FontFamily>Lucida Sans</FontFamily>
+                      <FontSize>14pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox7</rd:DefaultName>
+            <Top>1.72792in</Top>
+            <Left>0.125in</Left>
+            <Height>0.29723in</Height>
+            <Width>5.57292in</Width>
+            <ZIndex>5</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
         <Height>4.86334in</Height>
         <Style />
       </Body>
-      <Width>11.62375in</Width>
+      <Width>14in</Width>
       <Page>
         <LeftMargin>1in</LeftMargin>
         <RightMargin>1in</RightMargin>

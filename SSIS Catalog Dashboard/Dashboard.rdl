@@ -791,7 +791,7 @@
                       <TextRun>
                         <Value>Succeeded</Value>
                         <Style>
-                          <FontFamily>lucida sans</FontFamily>
+                          <FontFamily>Lucida Sans</FontFamily>
                           <FontSize>14pt</FontSize>
                           <Color>=IIF(CountRows("rdsRecentSuccessfulExecutions") = 0, "Black", "White")</Color>
                         </Style>

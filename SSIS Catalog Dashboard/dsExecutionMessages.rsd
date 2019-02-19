@@ -17,7 +17,23 @@
           <rd:DbType>Boolean</rd:DbType>
         </DataSetParameter>
       </DataSetParameters>
-      <CommandText>SELECT *
+      <CommandText>SELECT em.event_message_id
+	 , em.operation_id
+	 , em.message_time
+	 , em.message_type
+	 , em.message_source_type
+	 , LTRIM(RTRIM(em.message)) [message]
+	 , em.extended_info_id
+	 , em.package_name
+	 , em.event_name
+	 , em.message_source_name
+	 , em.message_source_id
+	 , em.subcomponent_name
+	 , em.package_path
+	 , em.execution_path
+	 , em.threadID
+	 , em.message_code
+	 , em.event_message_guid
 FROM catalog.event_messages em
 WHERE em.operation_id = @pExecutionID
 AND em.message_type = CASE WHEN @pOnlyErrors = 1 THEN 120 ELSE em.message_type END </CommandText>

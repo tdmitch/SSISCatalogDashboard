@@ -256,25 +256,25 @@
                   <Width>1in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>1.20833in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.41667in</Width>
+                  <Width>2.67709in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.67708in</Width>
+                  <Width>2.08333in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.5925in</Width>
+                  <Width>2.0125in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.65625in</Width>
+                  <Width>1.97917in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.40625in</Width>
+                  <Width>1.625in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.875in</Width>
+                  <Width>1.11458in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -292,6 +292,7 @@
                                 <TextRun>
                                   <Value>Execution ID</Value>
                                   <Style>
+                                    <FontFamily>lucida sans</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -308,6 +309,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>LightSteelBlue</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -327,6 +329,7 @@
                                 <TextRun>
                                   <Value>Status</Value>
                                   <Style>
+                                    <FontFamily>lucida sans</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -343,6 +346,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>LightSteelBlue</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -362,6 +366,7 @@
                                 <TextRun>
                                   <Value>Package</Value>
                                   <Style>
+                                    <FontFamily>lucida sans</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -378,6 +383,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>LightSteelBlue</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -397,6 +403,7 @@
                                 <TextRun>
                                   <Value>Project</Value>
                                   <Style>
+                                    <FontFamily>lucida sans</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -413,6 +420,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>LightSteelBlue</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -432,6 +440,7 @@
                                 <TextRun>
                                   <Value>Folder</Value>
                                   <Style>
+                                    <FontFamily>lucida sans</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -448,6 +457,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>LightSteelBlue</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -467,6 +477,7 @@
                                 <TextRun>
                                   <Value>Start</Value>
                                   <Style>
+                                    <FontFamily>lucida sans</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -483,6 +494,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>LightSteelBlue</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -502,6 +514,7 @@
                                 <TextRun>
                                   <Value>End</Value>
                                   <Style>
+                                    <FontFamily>lucida sans</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -518,6 +531,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>LightSteelBlue</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -537,6 +551,7 @@
                                 <TextRun>
                                   <Value>Duration (sec)</Value>
                                   <Style>
+                                    <FontFamily>lucida sans</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -553,6 +568,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>LightSteelBlue</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -577,6 +593,7 @@
                                 <TextRun>
                                   <Value>=Fields!execution_id.Value</Value>
                                   <Style>
+                                    <FontFamily>Lucida Sans</FontFamily>
                                     <FontSize>9pt</FontSize>
                                     <TextDecoration>Underline</TextDecoration>
                                     <Color>Blue</Color>
@@ -627,6 +644,7 @@
                                 <TextRun>
                                   <Value>=LOOKUP(Fields!status.Value, Fields!status_id.Value, Fields!status_name.Value, "rdsStatus")</Value>
                                   <Style>
+                                    <FontFamily>Lucida Sans</FontFamily>
                                     <FontSize>9pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -659,6 +677,7 @@
                                 <TextRun>
                                   <Value>=Fields!package_name.Value</Value>
                                   <Style>
+                                    <FontFamily>Lucida Sans</FontFamily>
                                     <FontSize>9pt</FontSize>
                                     <TextDecoration>Underline</TextDecoration>
                                     <Color>Blue</Color>
@@ -713,6 +732,7 @@
                                 <TextRun>
                                   <Value>=Fields!project_name.Value</Value>
                                   <Style>
+                                    <FontFamily>Lucida Sans</FontFamily>
                                     <FontSize>9pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -745,6 +765,7 @@
                                 <TextRun>
                                   <Value>=Fields!folder_name.Value</Value>
                                   <Style>
+                                    <FontFamily>Lucida Sans</FontFamily>
                                     <FontSize>9pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -777,6 +798,7 @@
                                 <TextRun>
                                   <Value>=Fields!start_time.Value</Value>
                                   <Style>
+                                    <FontFamily>Lucida Sans</FontFamily>
                                     <FontSize>9pt</FontSize>
                                     <Format>g</Format>
                                   </Style>
@@ -810,6 +832,7 @@
                                 <TextRun>
                                   <Value>=Fields!end_time.Value</Value>
                                   <Style>
+                                    <FontFamily>Lucida Sans</FontFamily>
                                     <FontSize>9pt</FontSize>
                                     <Format>g</Format>
                                   </Style>
@@ -843,6 +866,7 @@
                                 <TextRun>
                                   <Value>=Fields!duration.Value</Value>
                                   <Style>
+                                    <FontFamily>Lucida Sans</FontFamily>
                                     <FontSize>9pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -892,8 +916,9 @@
             </TablixRowHierarchy>
             <DataSetName>rdsExecutionList</DataSetName>
             <Top>1.72792in</Top>
+            <Left>0.125in</Left>
             <Height>0.5in</Height>
-            <Width>11.62375in</Width>
+            <Width>13.7in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -918,8 +943,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>0.13459in</Top>
-            <Left>3.27021in</Left>
+            <Top>0.18167in</Top>
+            <Left>4.5125in</Left>
             <Height>0.64583in</Height>
             <Width>6.125in</Width>
             <ZIndex>1</ZIndex>
@@ -935,8 +960,8 @@
             <Source>Embedded</Source>
             <Value>logo</Value>
             <Sizing>FitProportional</Sizing>
-            <Top>0.00959in</Top>
-            <Left>2.22854in</Left>
+            <Top>0.05667in</Top>
+            <Left>3.22083in</Left>
             <Height>0.77083in</Height>
             <Width>0.8125in</Width>
             <ZIndex>2</ZIndex>
@@ -968,7 +993,7 @@
             <rd:DefaultName>Textbox2</rd:DefaultName>
             <Top>0.9675in</Top>
             <Height>0.46875in</Height>
-            <Width>11.62375in</Width>
+            <Width>14in</Width>
             <ZIndex>3</ZIndex>
             <Style>
               <Border>
@@ -981,10 +1006,10 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>3.04in</Height>
+        <Height>2.50875in</Height>
         <Style />
       </Body>
-      <Width>11.62375in</Width>
+      <Width>14in</Width>
       <Page>
         <LeftMargin>1in</LeftMargin>
         <RightMargin>1in</RightMargin>
