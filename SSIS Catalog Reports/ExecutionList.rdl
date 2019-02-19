@@ -625,7 +625,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!status.Value</Value>
+                                  <Value>=LOOKUP(Fields!status.Value, Fields!status_id.Value, Fields!status_name.Value, "rdsStatus")</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
