@@ -1139,7 +1139,6 @@
           <LabelField>folder_name</LabelField>
         </DataSetReference>
       </ValidValues>
-      <MultiValue>true</MultiValue>
     </ReportParameter>
     <ReportParameter Name="pProject">
       <DataType>String</DataType>
@@ -1151,7 +1150,6 @@
           <LabelField>project_name</LabelField>
         </DataSetReference>
       </ValidValues>
-      <MultiValue>true</MultiValue>
     </ReportParameter>
     <ReportParameter Name="pPackage">
       <DataType>String</DataType>
@@ -1163,7 +1161,6 @@
           <LabelField>package_name</LabelField>
         </DataSetReference>
       </ValidValues>
-      <MultiValue>true</MultiValue>
     </ReportParameter>
     <ReportParameter Name="pMaxNumberOfExecutions">
       <DataType>Integer</DataType>

@@ -82,7 +82,7 @@ FROM (
 		, ROW_NUMBER() OVER (ORDER BY start_time DESC) [RowNum]
 	FROM [catalog].[executions]
 	WHERE [status] IN ( @Status )
-		AND CAST(end_time AS DATETIME) &gt; DATEADD(HOUR, 0 - CAST(@RecentEventNumberOfHours AS INT), GETDATE())
+		AND CAST(start_time AS DATETIME) &gt; DATEADD(HOUR, 0 - CAST(@RecentEventNumberOfHours AS INT), GETDATE())
 		AND folder_name IN ( @FolderName )
 		AND project_name IN ( @ProjectName )
 		AND package_name IN ( @PackageName )
